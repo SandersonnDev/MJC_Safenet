@@ -85,7 +85,3 @@ Principaux éléments :
     - Arrêt minuteur.
     - Animation explosion + son.
 
-***
-
-Souhaitez-vous que je passe maintenant à l’écriture du squelette de code HTML/CSS/JS ?
-
