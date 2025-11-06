@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulation de piratage - Darko_Fz</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <canvas id="binaryBackground"></canvas>
+
+  <div id="app">
+    <img id="logo" src="logo.png" alt="Logo">
+    
+    <div id="timer">01:00:00</div>
+    
+    <div id="terminal">
+      <input id="codeInput" type="text" placeholder="Entrez le code de désactivation...">
+      <button id="validateBtn">Valider</button>
+    </div>
+
+    <div id="feedback"></div>
+  </div>
+
+  <div id="adminPanel" class="hidden">
+    <h2>Menu Administrateur</h2>
+    <label>Durée du minuteur (secondes): 
+      <input id="adminDuration" type="number" value="3600">
+    </label>
+    <label>Mot de passe de désactivation: 
+      <input id="adminCode" type="text" value="netsafe">
+    </label>
+    <label>Pénalité (secondes): 
+      <input id="adminPenalty" type="number" value="10">
+    </label>
+
+    <div class="buttons">
+      <button id="startBtn">Démarrer</button>
+      <button id="resetBtn">Réinitialiser</button>
+      <button id="saveBtn">Sauvegarder</button>
+    </div>
+  </div>
+
+  <audio id="explosionSound" src="explosion.mp3" preload="auto"></audio>
+  
+  <script src="script.js"></script>
+</body>
+</html>

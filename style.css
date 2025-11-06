@@ -1,0 +1,151 @@
+/* === STYLES GÉNÉRAUX === */
+body {
+  margin: 0;
+  background: black;
+  color: #00ff00; /* Vert "Matrix" */
+  font-family: 'Courier New', Courier, monospace;
+  overflow: hidden; /* Empêche le défilement lors de l'animation "shake" */
+}
+
+/* === FOND BINAIRE (CANVAS) === */
+#binaryBackground {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* Derrière tout le reste */
+  background: black;
+}
+
+/* === LAYOUT PRINCIPAL === */
+#app {
+  position: relative;
+  z-index: 1; /* Au-dessus du fond binaire */
+  text-align: center;
+  top: 20%;
+}
+
+#logo {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  height: 80px;
+}
+
+/* === MINUTEUR === */
+#timer {
+  font-size: 3em;
+  border: 2px solid #00ff00;
+  display: inline-block;
+  padding: 20px 40px;
+  border-radius: 10px;
+  transition: color 0.5s, border-color 0.5s;
+}
+
+/* === TERMINAL (INPUT + BOUTON) === */
+#terminal {
+  margin-top: 30px;
+}
+
+#codeInput {
+  width: 300px;
+  padding: 10px;
+  color: #00ff00;
+  background: black;
+  border: 1px solid #00ff00;
+  outline: none; /* Pas de contour bleu moche au focus */
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1em;
+}
+
+#feedback {
+  margin-top: 20px;
+  font-size: 1.2em;
+  height: 1.5em; /* Réserve l'espace pour éviter les sauts de page */
+}
+
+/* === BOUTONS (STYLE AMÉLIORÉ) === */
+button {
+  background: black;
+  color: #00ff00;
+  border: 1px solid #00ff00;
+  padding: 10px 15px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+
+button:hover {
+  background: #00ff00;
+  color: black;
+}
+
+button:active {
+  background: #009900; /* Effet "clic" */
+}
+
+
+/* === MENU ADMINISTRATEUR === */
+#adminPanel {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.9);
+  border: 2px solid #00ff00;
+  padding: 20px;
+  display: none; /* Géré par JS */
+  color: white; /* Texte blanc pour meilleure lisibilité */
+  width: 400px;
+  z-index: 100; /* Au-dessus de tout */
+}
+
+#adminPanel h2 {
+  margin-top: 0;
+  text-align: center;
+  color: #00ff00;
+}
+
+#adminPanel label {
+  display: block;
+  margin-bottom: 15px;
+  font-size: 0.9em;
+}
+
+#adminPanel label input {
+  width: 100%;
+  box-sizing: border-box; /* Inclut padding/border dans la largeur */
+  margin-top: 5px;
+  padding: 5px;
+  background: #111;
+  border: 1px solid #00ff00;
+  color: white;
+}
+
+#adminPanel .buttons {
+  margin-top: 15px;
+  text-align: center;
+}
+
+#adminPanel .buttons button {
+  margin: 5px;
+}
+
+/* === CLASSES UTILITAIRES & ANIMATIONS === */
+.hidden {
+  display: none;
+}
+
+.shake {
+  animation: shake 0.5s;
+}
+
+@keyframes shake {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(-10px, 0); }
+  50% { transform: translate(10px, 0); }
+  75% { transform: translate(-10px, 0); }
+  100% { transform: translate(0, 0); }
+}
