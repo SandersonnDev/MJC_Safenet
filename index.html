@@ -1,38 +1,50 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Simulation de piratage - Darko_Fz</title>
-  <link rel="stylesheet" href="style.css">
+
+  <!-- Police pixelisée 8-bit sur Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
   <canvas id="binaryBackground"></canvas>
 
   <div id="app">
-    <img id="logo" src="logo.png" alt="Logo">
-    
-    <div id="timer">01:00:00</div>
-    
-    <div id="terminal">
-      <input id="codeInput" type="text" placeholder="Entrez le code de désactivation...">
-      <button id="validateBtn">Valider</button>
-    </div>
+    <img id="logo" src="logo.png" alt="Logo" />
+    <div id="timer">01:00:00:00</div>
 
-    <div id="feedback"></div>
+    <div id="content">
+      <div id="output-console"></div>
+      <div id="terminal">
+        <input id="codeInput" type="text" placeholder="Entrez le code de désactivation..." />
+        <button id="validateBtn">Valider</button>
+      </div>
+
+      <div id="feedback"></div>
+    </div>
   </div>
 
   <div id="adminPanel" class="hidden">
     <h2>Menu Administrateur</h2>
-    <label>Durée du minuteur (secondes): 
-      <input id="adminDuration" type="number" value="3600">
+    <label>Durée du minuteur :</label>
+    <div id="minuteur"><!--style="display:flex; gap:5px; margin: 10px 0;" --> 
+      <input id="adminHours" type="number" min="0" max="23" placeholder="hh">
+      <input id="adminMinutes" type="number" min="0" max="59" placeholder="mm">
+      <input id="adminSeconds" type="number" min="0" max="59" placeholder="ss">
+    </div>
+    <label>
+      Mot de passe de désactivation:
+      <input id="adminCode" type="text" value="netsafe" />
     </label>
-    <label>Mot de passe de désactivation: 
-      <input id="adminCode" type="text" value="netsafe">
-    </label>
-    <label>Pénalité (secondes): 
-      <input id="adminPenalty" type="number" value="10">
+    <label>
+      Pénalité (secondes):
+      <input id="adminPenalty" type="number" value="10" />
     </label>
 
     <div class="buttons">
@@ -42,8 +54,11 @@
     </div>
   </div>
 
-  <audio id="explosionSound" src="explosion.mp3" preload="auto"></audio>
-  
+  <audio id="beepSound" src="bip.wav" preload="auto"></audio>
+  <audio id="errorSound" src="error.wav" preload="auto"></audio>
+  <audio id="gameOverSound" src="gameover.wav" preload="auto"></audio>
+
   <script src="script.js"></script>
 </body>
+
 </html>
