@@ -191,7 +191,7 @@ function updateTimer() {
 
     if (gameOverSound) gameOverSound.play();
 
-    feedback.textContent = "Le compte Darko_Fz est compromis !";
+    feedback.textContent = "Le compte est compromis !";
     feedback.classList.remove("invalid-code");
     timerDisplay.style.color = "red";
     timerDisplay.style.borderColor = "red";
@@ -252,7 +252,7 @@ function updateTimer() {
       clearInterval(timerInterval);
       isRunning = false;
 
-      feedback.textContent = "Vous avez désactivé le piratage du compte de Darko_Fz. Ses données personnelles et sa E-réputation sont sauvés...";
+      feedback.textContent = "";
       feedback.classList.remove("invalid-code");
       timerDisplay.style.color = "#444444ff";
       timerDisplay.style.borderColor = "#444444ff";
