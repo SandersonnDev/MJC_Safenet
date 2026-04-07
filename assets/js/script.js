@@ -308,7 +308,7 @@ function updateTimer() {
   function showErrorGif() {
     if (!errorGif) {
       errorGif = document.createElement("img");
-      errorGif.src = "fail.webp";
+      errorGif.src = "assets/images/fail.webp";
       errorGif.alt = "Erreur de code";
       errorGif.style.maxWidth = "100%";
       errorGif.style.marginTop = "10px";
