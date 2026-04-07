@@ -1,9 +1,3 @@
-# Safenet
-
-Application web **statique** : simulateur d’interface « hacking » pour un **escape game** autour de la cybersécurité, destiné à un public jeune en contexte d’animation (ex. événement, atelier sensibilisation).
-
----
-
 ## 1. Besoins du client
 
 ### Contexte et cible
